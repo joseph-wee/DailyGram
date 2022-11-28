@@ -201,7 +201,6 @@ const Button = styled.div`
     return props.answer > 0 && props.pw == 1 && props.pwCheck == 1? "#3f51b5" : "#DDDDDD";
   }};
   transition: 0.3s;
-  cursor: pointer;
   &:nth-of-type(3) {
     margin-top: 20px;
     width: 80px;
@@ -211,8 +210,8 @@ const Button = styled.div`
 `;
 
 const CautionBox = styled.div`
-display: ${(props) => {
-  return props.state == true ? "block" : "none";
+background-color: ${(props) => {
+  return caution == true ? "#3f51b5" : "#DDDDDD";
 }};
   z-index: 1; 
   position: fixed;

@@ -1,9 +1,28 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const MainPage = () => {
   const [isLogin, setIsLogin] = useState(false);
+
+    /**api test */
+
+    const test = async () => {
+      console.log("되긴하는거여냐?")
+      await axios
+        .get(`https://pokeapi.co/api/v2/pokemon/ditto`)
+        .then(res => {
+          console.log(res)
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    };
+
+useEffect(() => {
+  test()
+}, [])
 
   return (
     <>
